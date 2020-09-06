@@ -25,11 +25,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: 'https://grades-front-igti.herokuapp.com/'
+    origin: process.env.URL_APP
   })
-  // {
-  //   origin: 'http://localhost:8080',
-  // }
 );
 app.use(express.json());
 
