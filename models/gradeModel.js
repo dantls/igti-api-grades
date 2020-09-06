@@ -18,7 +18,18 @@ export default (mongoose) => {
     },
   });
 
+  schema.method("toJSON",function(){
+    const {__v, _id, ...object} = this.toObject();
+
+    object.id = _id;
+
+    return object;
+  })
+
+
   const Grade = mongoose.model('grades',schema);
+
+  
 
   return Grade;
 };
